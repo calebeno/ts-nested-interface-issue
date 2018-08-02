@@ -5,10 +5,9 @@ Install dependencies
 ```sh
 npm install or yarn install
 ```
-Type check the code
 
-```sh
-npm run type-check
-```
+###example1.ts:
+File contains a single interface with a nested structure.  Causes one error when four were expected.
 
-Only one error is shown.  Would have expected three.  See example1.ts
+###example2.ts
+File contains three interfaces, each used by the previous.  Causes two errors when four were expected.
