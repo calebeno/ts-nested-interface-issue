@@ -15,16 +15,16 @@ let mockUpTwo: FirstLevel = {
         aMethod: (): ThirdLevel => {
             return {
                 anotherMethod: () => {
-                    return 0; // This should cause an error, not returning a string
+                    return 'string';
                 },
                 woops: () => {  // Causes error as expected
                     return 0;
                 }
             };
         },
-        wrongAgain: () => {  // This should cause an error, not defined in the interface
+        wrongAgain: () => {  // Causes error as expected
             return 0;
         }
     },
-    shouldNotBeHere: 'string'  // Causes error as expected
+    shouldNotBeHere: 'string'  // This should cause an error, not defined in the interface
 };

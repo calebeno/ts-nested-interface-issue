@@ -11,16 +11,16 @@ let mockUp: TopLevel = {
         aMethod: () => {
             return {
                 anotherMethod: () => {
-                    return 0; // This should cause an error, not returning a string
+                    return 'string';
                 },
                 woops: () => {  // This should cause an error, not defined in the interface
                     return 0;
                 }
             };
         },
-        wrongAgain: () => {  // This should cause an error, not defined in the interface
+        wrongAgain: () => {  // Causes error as expected
             return 0;
         }
     },
-    shouldNotBeHere: 'string'  // Causes error as expected
+    shouldNotBeHere: 'string'  // This should cause an error, not defined in the interface
 };
