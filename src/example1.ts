@@ -6,21 +6,21 @@ interface TopLevel {
     };
 }
 
-let mockup: TopLevel = {
+let mockUp: TopLevel = {
     aProperty: {
         aMethod: () => {
             return {
                 anotherMethod: () => {
-                    return 'string';
+                    return 0; // This should cause an error, not returning a string
                 },
-                woops: () => {  // Why does adding this not cause an error?
+                woops: () => {  // This should cause an error, not defined in the interface
                     return 0;
                 }
             };
         },
-        wrongAgain: () => {  // Why does adding this not cause an error?
+        wrongAgain: () => {  // This should cause an error, not defined in the interface
             return 0;
         }
     },
-    unacceptable: 'string'  // Causes error
+    shouldNotBeHere: 'string'  // Causes error as expected
 };
